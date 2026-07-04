@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLARH ALI STORE</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        <h2>BLARH ALI STORE</h2>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+    </div>
+
+   <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="login.html">Login</a>
+    <a href="signup.html">Signup</a>
+    <a href="cart.html">
+        Cart (<span id="cartCount">0</span>)
+    </a>
+    <a href="profile.html">Profile</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+    <h1>WELCOME TO BLARH ALI STORE</h1>
+
+    <p>
+        Dress • Phones • Shoes • Accessories
+    </p>
+
+    <button onclick="location.href='products.html'">
+        Shop Now
+    </button>
+
+</section>
+
+<section class="categories">
+
+    <h2>Shop by Category</h2>
+
+    <div class="category-grid">
+
+       <a href="products.html?category=Dress" class="category-card">
+    👕
+    <h3>Dress</h3>
+</a>
+        
+
+        <a href="products.html?category=Shoes" class="category-card">
+            👟
+            <h3>Shoes</h3>
+        </a>
+
+        <a href="products.html?category=Phones" class="category-card">
+            📱
+            <h3>Phones</h3>
+        </a>
+
+        <a href="products.html?category=Electronics" class="category-card">
+            💻
+            <h3>Electronics</h3>
+        </a>
+
+        <a href="products.html?category=Watches" class="category-card">
+            ⌚
+            <h3>Watches</h3>
+        </a>
+
+        <a href="products.html?category=Beauty" class="category-card">
+            💄
+            <h3>Beauty</h3>
+        </a>
+
+    </div>
+
+</section>
+    </div>
+
+</section>
+
+
+<section class="products">
+
+    <h2>Latest Products</h2>
+
+    <div id="productContainer"></div>
+
+</section>
+
+    </div>
+
+<section class="features">
+
+    <h2>Why Shop With Us?</h2>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            🚚
+            <h3>Fast Delivery</h3>
+            <p>Fast delivery across Ghana.</p>
+        </div>
+
+        <div class="feature-card">
+            🔒
+            <h3>Secure Payments</h3>
+            <p>Safe and secure online payments.</p>
+        </div>
+
+        <div class="feature-card">
+            ⭐
+            <h3>Quality Products</h3>
+            <p>Only quality products at affordable prices.</p>
+        </div>
+
+        <div class="feature-card">
+            💬
+            <h3>24/7 Support</h3>
+            <p>We're always here to help you.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+</section>
+
+<script src="js/cart.js"></script>
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+
+<footer>
+
+    <h2>BLARH ALI STORE</h2>
+
+    <p>
+        Your trusted online shopping destination.
+    </p>
+
+    <p>
+        © 2026 BLARH ALI STORE. All Rights Reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>

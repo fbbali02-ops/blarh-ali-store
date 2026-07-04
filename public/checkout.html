@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - BLARH ALI STORE</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        <h2>BLARH ALI STORE</h2>
+    </div>
+
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="cart.html">🛒 Cart</a>
+    </nav>
+
+</header>
+
+<section class="checkout-page">
+
+    <h1>Checkout</h1>
+
+    <form id="checkoutForm">
+
+        <input
+            type="text"
+            id="fullName"
+            placeholder="Full Name"
+            required
+        >
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email Address"
+            required
+        >
+
+        <input
+            type="text"
+            id="phone"
+            placeholder="Phone Number"
+            required
+        >
+
+        <textarea
+            id="address"
+            placeholder="Delivery Address"
+            required
+        ></textarea>
+
+        <textarea
+            id="notes"
+            placeholder="Order Notes (Optional)"
+        ></textarea>
+
+        <h2 id="checkoutTotal">
+            Total: GH₵0
+        </h2>
+
+        <button type="submit">
+            Place Order
+        </button>
+
+    </form>
+
+</section>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="js/checkout.js"></script>
+
+</body>
+</html>

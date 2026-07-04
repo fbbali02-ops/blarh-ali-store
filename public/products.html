@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - BLARH ALI STORE</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        <h2>BLARH ALI STORE</h2>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+    </div>
+
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="products.html">🛍 Products</a>
+        <a href="cart.html">
+            🛒 Cart (<span id="cartCount">0</span>)
+        </a>
+        <a href="profile.html">👤 Profile</a>
+    </nav>
+
+</header>
+
+<section class="products">
+
+    <h1 id="categoryTitle">All Products</h1>
+
+    <div id="productContainer"></div>
+
+</section>
+
+<script src="js/cart.js"></script>
+<script src="js/products.js"></script>
+<script src="js/auth.js"></script>
+
+</body>
+</html>

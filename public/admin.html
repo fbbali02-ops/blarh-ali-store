@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | BLARH ALI STORE</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="admin-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <h2>BLARH ALI STORE</h2>
+
+        <ul>
+
+            <li><a href="admin.html">🏠 Dashboard</a></li>
+
+            <li><a href="admin.html">📦 Products</a></li>
+
+            <li><a href="admin-orders.html">🛒 Orders</a></li>
+
+            <li><a href="#">👥 Users (coming soon)</a></li>
+
+            <li><a href="#">⚙ Settings (coming soon)</a></li>
+
+            <li><a href="index.html">🌐 Visit Store</a></li>
+
+            <li><a href="#" id="adminLogout">🚪 Logout</a></li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-content">
+
+        <h1>Dashboard</h1>
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+                <h3>Total Products</h3>
+                <p id="totalProducts">0</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Total Users</h3>
+                <p id="totalUsers">0</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Total Orders</h3>
+                <p id="totalOrders">0</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>Revenue</h3>
+                <p id="totalRevenue">GH₵0</p>
+            </div>
+
+        </div>
+
+        <h2>Add Product</h2>
+
+        <form id="productForm">
+
+            <input type="text" id="name" placeholder="Product Name" required>
+
+            <input type="number" id="price" placeholder="Price" required>
+
+            <select id="category" required>
+
+                <option value="">Select Category</option>
+                <option value="Dress">Dress</option>
+                <option value="Shoes">Shoes</option>
+                <option value="Phones">Phones</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Electronics">Electronics</option>
+
+            </select>
+
+            <input type="file" id="image" accept="image/*" required>
+
+            <textarea id="description" placeholder="Description"></textarea>
+
+            <input type="number" id="stock" placeholder="Stock">
+
+            <button type="submit">Add Product</button>
+
+        </form>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search products..."
+            style="width:100%;padding:15px;margin:20px 0;border-radius:8px;border:1px solid #ddd;"
+        >
+
+        <h2 style="margin-top:40px;">All Products</h2>
+
+        <table id="productTable">
+
+            <thead>
+
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Stock</th>
+                    <th>Actions</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="productTableBody"></tbody>
+
+        </table>
+
+    </main>
+
+</div>
+
+<!-- Scripts -->
+<script src="js/admin.js"></script>
+<script src="js/adminDashboard.js"></script>
+
+</body>
+</html>

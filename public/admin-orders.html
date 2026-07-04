@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Orders</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        <h2>BLARH ALI STORE - Orders</h2>
+    </div>
+
+    <nav>
+
+        <a href="admin.html">Dashboard</a>
+
+        <a href="admin-orders.html">Orders</a>
+
+        <a href="#" id="adminLogout">Logout</a>
+
+    </nav>
+
+</header>
+
+<section class="cart-page">
+
+    <h1>Customer Orders</h1>
+
+    <table width="100%" border="1" cellspacing="0" cellpadding="10">
+
+        <thead>
+
+           <tr>
+    <th>Customer</th>
+    <th>Phone</th>
+    <th>Total</th>
+    <th>Payment</th>
+    <th>Status</th>
+    <th>Actions</th>
+</tr>
+
+        </thead>
+
+        <tbody id="ordersTable"></tbody>
+
+    </table>
+
+</section>
+
+<script src="js/adminOrders.js"></script>
+
+</body>
+</html>
