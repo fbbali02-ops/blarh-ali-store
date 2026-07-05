@@ -72,7 +72,7 @@ async function verifyPayment(reference, customer, email, phone, address, notes) 
 
         // Verify payment
         const verify = await fetch(
-            `http://localhost:5000/api/payment/verify/${reference}`
+            `https://blarh-ali-store.onrender.com/api/payment/verify/${reference}`
         );
 
         const verifyData = await verify.json();
@@ -101,7 +101,7 @@ async function verifyPayment(reference, customer, email, phone, address, notes) 
 
             // Save order
             const saveOrder = await fetch(
-                "http://localhost:5000/api/orders",
+                "https://blarh-ali-store.onrender.com/api/orders",
                 {
                     method: "POST",
                     headers: {

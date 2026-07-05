@@ -5,7 +5,7 @@ const container = document.getElementById("orderInfo");
 
 async function loadOrder() {
 
-    const res = await fetch("http://localhost:5000/api/orders");
+    const res = await fetch("https://blarh-ali-store.onrender.com/api/orders");
     const orders = await res.json();
 
     const order = orders.find(o => o._id === orderId);

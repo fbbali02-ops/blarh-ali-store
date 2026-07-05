@@ -2,7 +2,7 @@ async function loadStats() {
 
     try {
 
-        const res = await fetch("http://localhost:5000/api/stats");
+        const res = await fetch("https://blarh-ali-store.onrender.com/api/stats");
         const data = await res.json();
 
         document.getElementById("totalProducts").textContent = data.products;

@@ -8,7 +8,7 @@ let editingProductId = null;
 // ==========================
 async function loadProducts() {
 
-    const response = await fetch("http://localhost:5000/api/products");
+    const response = await fetch("https://blarh-ali-store.onrender.com/api/products");
     const products = await response.json();
 
     document.getElementById("totalProducts").textContent = products.length;
@@ -81,7 +81,7 @@ form.addEventListener("submit", async (e) => {
         formData.append("image", imageFile);
     }
 
-    const response = await fetch("http://localhost:5000/api/products/add", {
+    const response = await fetch("https://blarh-ali-store.onrender.com/api/products/add", {
 
         method: "POST",
         body: formData
@@ -104,7 +104,7 @@ form.addEventListener("submit", async (e) => {
 // ==========================
 async function editProduct(id) {
 
-    const response = await fetch("http://localhost:5000/api/products");
+    const response = await fetch("https://blarh-ali-store.onrender.com/api/products");
 
     const products = await response.json();
 
@@ -132,7 +132,7 @@ async function deleteProduct(id) {
 
     if (!confirm("Delete this product?")) return;
 
-    await fetch(`http://localhost:5000/api/products/${id}`, {
+    await fetch(`https://blarh-ali-store.onrender.com/api/products/${id}`, {
 
         method: "DELETE"
 

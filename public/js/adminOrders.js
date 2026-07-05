@@ -5,7 +5,7 @@ async function loadOrders() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/orders");
+        const response = await fetch("https://blarh-ali-store.onrender.com/api/orders");
 
         const orders = await response.json();
 
@@ -70,7 +70,7 @@ async function updateStatus(id, status) {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/orders/${id}`,
+            `https://blarh-ali-store.onrender.com/api/orders/${id}`,
             {
                 method: "PUT",
                 headers: {
@@ -102,7 +102,7 @@ async function deleteOrder(id) {
     try {
 
         const response = await fetch(
-            `http://localhost:5000/api/orders/${id}`,
+            `https://blarh-ali-store.onrender.com/api/orders/${id}`,
             {
                 method: "DELETE"
             }
@@ -135,7 +135,7 @@ document.getElementById("adminLogout").addEventListener("click", (e) => {
 });
 async function viewOrder(id) {
 
-    const res = await fetch("http://localhost:5000/api/orders");
+    const res = await fetch("https://blarh-ali-store.onrender.com/api/orders");
     const orders = await res.json();
 
     const order = orders.find(o => o._id === id);
