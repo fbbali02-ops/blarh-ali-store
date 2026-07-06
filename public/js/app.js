@@ -66,3 +66,15 @@ if (searchInput) {
     });
 
 }
+const menuToggle = document.getElementById("menuToggle");
+const navbar = document.getElementById("navbar");
+
+if(menuToggle){
+
+    menuToggle.addEventListener("click", () => {
+
+        navbar.classList.toggle("active");
+
+    });
+
+}
