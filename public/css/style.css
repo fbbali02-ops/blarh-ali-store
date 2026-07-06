@@ -92,6 +92,14 @@ nav{
     align-items:center;
 
     gap:18px;
+      flex:100%;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+     gap:10px;
+     justify-content:center;
+
 
 }
 
@@ -173,15 +181,7 @@ header{
 
 }
 
-nav{
 
-    flex:100%;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-}
 
 }
 
@@ -205,11 +205,7 @@ header{
 
 }
 
-nav{
 
-    gap:10px;
-
-}
 
 nav a{
 
@@ -247,11 +243,7 @@ header{
 
 }
 
-nav{
 
-    justify-content:center;
-
-}
 
 nav a{
 
