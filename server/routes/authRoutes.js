@@ -59,9 +59,7 @@ router.get("/test", (req, res) => {
 // LOGIN
 // ======================
 router.post("/login", async (req, res) => {
-
     try {
-
         const { email, password } = req.body;
 
         const user = await User.findOne({ email });
@@ -94,23 +92,19 @@ router.post("/login", async (req, res) => {
         res.json({
             message: "Login successful",
             token,
-           user: {
-    id: user._id,
-    username: user.username,
-    email: user.email,
-    role: user.role,
-    profileImage: user.profileImage
-}
+            user: {
+                id: user._id,
+                username: user.username,
+                email: user.email,
+                profileImage: user.profileImage,
+                role: user.role
+            }
         });
-
     } catch (error) {
-
         res.status(500).json({
             message: error.message
         });
-
     }
-
 });
 
 module.exports = router;
