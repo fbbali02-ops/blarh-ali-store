@@ -69,7 +69,7 @@ if (searchInput) {
 const menuToggle = document.getElementById("menuToggle");
 const navbar = document.getElementById("navbar");
 
-if(menuToggle){
+if (menuToggle && navbar) {
 
     menuToggle.addEventListener("click", () => {
 

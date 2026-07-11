@@ -2,124 +2,111 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>BLARH ALI STORE</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+   
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
 
-<div class="logo">
+    <div class="logo">
+        <a href="index.html">
+            <h2>BLARH ALI STORE</h2>
+        </a>
+    </div>
 
-<a href="index.html">
+    <!-- Mobile Menu Button -->
+    <button class="menu-toggle" id="menuToggle" type="button">
+        <i class="fas fa-bars"></i>
+    </button>
 
-<h2>BLARH ALI STORE</h2>
+    <!-- Search -->
+    <div class="search-box">
 
-</a>
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search phones, shoes, dresses..."
+        >
 
-</div>
+        <button type="button">
+            <i class="fas fa-search"></i>
+        </button>
 
-<button class="menu-toggle" id="menuToggle">
+    </div>
 
-<i class="fas fa-bars"></i>
+    <!-- Navigation -->
 
-</button>
+    <nav id="navbar">
 
-<div class="search-box">
+        <a href="index.html">
+            <i class="fas fa-house"></i>
+            Home
+        </a>
 
-<input
-type="text"
-id="searchInput"
-placeholder="Search phones, shoes, dresses..."
->
+        <a href="products.html">
+            <i class="fas fa-store"></i>
+            Products
+        </a>
 
-<button>
+        <a href="profile.html">
+            <i class="fas fa-user"></i>
+            Profile
+        </a>
 
-<i class="fas fa-search"></i>
+        <a href="login.html">
+            <i class="fas fa-right-to-bracket"></i>
+            Login
+        </a>
 
-</button>
+        <a href="signup.html">
+            <i class="fas fa-user-plus"></i>
+            Signup
+        </a>
 
-</div>
+        <a href="cart.html" class="cart-link">
 
-<nav id="navbar">
+            <i class="fas fa-cart-shopping"></i>
 
-<a href="index.html">
+            Cart
 
-<i class="fas fa-house"></i>
+            (<span id="cartCount">0</span>)
 
-Home
+        </a>
 
-</a>
-
-<a href="products.html">
-
-<i class="fas fa-store"></i>
-
-Products
-
-</a>
-
-<a href="profile.html">
-
-<i class="fas fa-user"></i>
-
-Profile
-
-</a>
-
-<a href="login.html">
-
-<i class="fas fa-right-to-bracket"></i>
-
-Login
-
-</a>
-
-<a href="signup.html">
-
-<i class="fas fa-user-plus"></i>
-
-Signup
-
-</a>
-
-<a href="cart.html" class="cart-link">
-
-<i class="fas fa-cart-shopping"></i>
-
-Cart
-
-<span id="cartCount">0</span>
-
-</a>
-
-</nav>
+    </nav>
 
 </header>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
     <h1>WELCOME TO BLARH ALI STORE</h1>
 
-    <p>Dress • Phones • Shoes • Accessories</p>
+    <p>
+        Fashion • Phones • Shoes • Accessories
+    </p>
 
-    <button onclick="location.href='products.html'">
+    <button onclick="window.location.href='products.html'">
         Shop Now
     </button>
 
 </section>
 
-<!-- CATEGORIES -->
+<!-- ================= CATEGORIES ================= -->
 
 <section class="categories">
 
@@ -161,7 +148,7 @@ Cart
 
 </section>
 
-<!-- PRODUCTS -->
+<!-- ================= PRODUCTS ================= -->
 
 <section class="products">
 
@@ -171,7 +158,7 @@ Cart
 
 </section>
 
-<!-- FEATURES -->
+<!-- ================= FEATURES ================= -->
 
 <section class="features">
 
@@ -180,32 +167,58 @@ Cart
     <div class="feature-grid">
 
         <div class="feature-card">
-            🚚
+
+            <i class="fas fa-truck-fast"></i>
+
             <h3>Fast Delivery</h3>
-            <p>Fast delivery across Ghana.</p>
+
+            <p>
+                Fast delivery across Ghana.
+            </p>
+
         </div>
 
         <div class="feature-card">
-            🔒
+
+            <i class="fas fa-lock"></i>
+
             <h3>Secure Payments</h3>
-            <p>Safe and secure online payments.</p>
+
+            <p>
+                Safe and secure online payments.
+            </p>
+
         </div>
 
         <div class="feature-card">
-            ⭐
+
+            <i class="fas fa-star"></i>
+
             <h3>Quality Products</h3>
-            <p>Only quality products at affordable prices.</p>
+
+            <p>
+                Only quality products at affordable prices.
+            </p>
+
         </div>
 
         <div class="feature-card">
-            💬
+
+            <i class="fas fa-headset"></i>
+
             <h3>24/7 Support</h3>
-            <p>We're always here to help you.</p>
+
+            <p>
+                We're always here to help you.
+            </p>
+
         </div>
 
     </div>
 
 </section>
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -213,9 +226,35 @@ Cart
 
     <p>Your trusted online shopping destination.</p>
 
-    <p>© 2026 BLARH ALI STORE. All Rights Reserved.</p>
+    <p>Fashion • Phones • Shoes • Accessories</p>
+
+    <br>
+
+    <div style="font-size:24px;">
+
+        <i class="fab fa-facebook"></i>
+
+        &nbsp;
+
+        <i class="fab fa-instagram"></i>
+
+        &nbsp;
+
+        <i class="fab fa-whatsapp"></i>
+
+    </div>
+
+    <br>
+
+    <p>
+
+        © 2026 BLARH ALI STORE. All Rights Reserved.
+
+    </p>
 
 </footer>
+
+<!-- Scripts -->
 
 <script src="js/cart.js"></script>
 <script src="js/app.js"></script>
