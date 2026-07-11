@@ -1,3 +1,24 @@
+// ==========================
+// ADMIN PROTECTION
+// ==========================
+
+const token = localStorage.getItem("token");
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (!token || !user) {
+    alert("Please login first.");
+    window.location.href = "login.html";
+}
+
+if (user.role !== "admin") {
+    alert("Access denied.");
+    window.location.href = "index.html";
+}
+
+// ==========================
+// ELEMENTS
+// ==========================
+
 const form = document.getElementById("productForm");
 const tableBody = document.getElementById("productTableBody");
 
@@ -6,65 +27,76 @@ let editingProductId = null;
 // ==========================
 // LOAD PRODUCTS
 // ==========================
+
 async function loadProducts() {
 
-    const response = await fetch("https://blarh-ali-store.onrender.com/api/products");
-    const products = await response.json();
+    try {
 
-    document.getElementById("totalProducts").textContent = products.length;
+        const response = await fetch("https://blarh-ali-store.onrender.com/api/products");
+        const products = await response.json();
 
-    tableBody.innerHTML = "";
+        document.getElementById("totalProducts").textContent = products.length;
 
-    products.forEach(product => {
+        tableBody.innerHTML = "";
 
-        tableBody.innerHTML += `
-        <tr>
+        products.forEach(product => {
 
-            <td>
-                <img src="${product.image}" width="70">
-            </td>
+            tableBody.innerHTML += `
+                <tr>
 
-            <td>${product.name}</td>
+                    <td>
+                        <img src="${product.image}" width="70">
+                    </td>
 
-            <td>GH₵ ${product.price}</td>
+                    <td>${product.name}</td>
 
-            <td>${product.category}</td>
+                    <td>GH₵ ${product.price}</td>
 
-            <td>${product.stock}</td>
+                    <td>${product.category}</td>
 
-            <td>
+                    <td>${product.stock}</td>
 
-                <button onclick="editProduct('${product._id}')">
-                    ✏ Edit
-                </button>
+                    <td>
 
-                <button onclick="deleteProduct('${product._id}')">
-                    🗑 Delete
-                </button>
+                        <button onclick="editProduct('${product._id}')">
+                            ✏ Edit
+                        </button>
 
-            </td>
+                        <button onclick="deleteProduct('${product._id}')">
+                            🗑 Delete
+                        </button>
 
-        </tr>
-        `;
+                    </td>
 
-    });
+                </tr>
+            `;
+
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
 
 }
 
 loadProducts();
 
-
 // ==========================
 // ADD PRODUCT
 // ==========================
+
 form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
-    // Editing will be updated later
     if (editingProductId) {
-        alert("Image upload editing will be added next.");
+
+        alert("Image editing will be added next.");
+
         return;
+
     }
 
     const formData = new FormData();
@@ -78,30 +110,43 @@ form.addEventListener("submit", async (e) => {
     const imageFile = document.getElementById("image").files[0];
 
     if (imageFile) {
+
         formData.append("image", imageFile);
+
     }
 
-    const response = await fetch("https://blarh-ali-store.onrender.com/api/products/add", {
+    try {
 
-        method: "POST",
-        body: formData
+        const response = await fetch("https://blarh-ali-store.onrender.com/api/products/add", {
 
-    });
+            method: "POST",
 
-    const data = await response.json();
+            body: formData
 
-    alert(data.message);
+        });
 
-    form.reset();
+        const data = await response.json();
 
-    loadProducts();
+        alert(data.message);
+
+        form.reset();
+
+        loadProducts();
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Failed to add product.");
+
+    }
 
 });
-
 
 // ==========================
 // EDIT PRODUCT
 // ==========================
+
 async function editProduct(id) {
 
     const response = await fetch("https://blarh-ali-store.onrender.com/api/products");
@@ -124,10 +169,10 @@ async function editProduct(id) {
 
 }
 
-
 // ==========================
 // DELETE PRODUCT
 // ==========================
+
 async function deleteProduct(id) {
 
     if (!confirm("Delete this product?")) return;
@@ -142,20 +187,10 @@ async function deleteProduct(id) {
 
 }
 
-
 // ==========================
-// LOGOUT
+// SEARCH
 // ==========================
-document.getElementById("adminLogout").addEventListener("click", (e) => {
 
-    e.preventDefault();
-
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-
-    window.location.href = "login.html";
-
-});
 const searchInput = document.getElementById("searchInput");
 
 if (searchInput) {
@@ -167,3 +202,18 @@ if (searchInput) {
     });
 
 }
+
+// ==========================
+// LOGOUT
+// ==========================
+
+document.getElementById("adminLogout").addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
+    window.location.href = "login.html";
+
+});
